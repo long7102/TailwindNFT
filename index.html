@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./build/tailwind.css">
+    <link rel="stylesheet" href="./build/app.css">
+    <link rel="icon" type="image/x-icon" href="data:image/jpeg;base64,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">
+    <title>Tailwind CSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <script href="./tailwind.config.js"></script>
+    <label for="toogle" class=" cursor-pointer toogle-switch">
+        <input type="checkbox" class="hidden darkmode-input transition-all " id="toogle">
+        <div style="width: 100px; height: 40px;"
+            class="p-1.5 z-50 fixed right-5 bottom-5 border border-gray-800 rounded-full transition-colors">
+            <div class="w-7 h-7 bg-gray-400 rounded-full transition-transform darkmode-spinner"></div>
+        </div>
+    </label>
+    <section class="bg-center bg-no-repeat bg-gray-700 bg-blend-multiply mb-20"
+        style="background-image: url('https://getwallpapers.com/wallpaper/full/5/a/a/412118.jpg')">
+        <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+            <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">We
+                invest in the world’s potential</h1>
+            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Welcome to [DeletedProtocol],
+                your one-stop shop for all things NFTs. Whether you're looking to buy, sell, or create NFTs, we have
+                everything you need to get started.</p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                <a href="#form"
+                    class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+                    Get started
+                    <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <a href="#slider"
+                    class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                    Slider art
+                </a>
+                <a href="#author"
+                    class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                    About me
+                </a>
+                <a href="#nft-buy" 
+                    class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+                   Buy some nft
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- component -->
+    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+    <article x-data="slider" class="relative w-full flex flex-shrink-0 overflow-hidden shadow-2xl" id="slider">
+        <div class="rounded-full bg-gray-900 text-white absolute top-5 right-5 text-sm px-2 text-center z-10">
+            <span x-text="currentIndex"></span>/
+            <span x-text="images.length"></span>
+        </div>
+
+        <template x-for="(image, index) in images">
+            <figure x-show="currentIndex == index + 1" style="height: 550px;"
+                x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-500"
+                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                <img :src="image" alt="Image" class="absolute inset-0 z-10 h-full w-full object-cover opacity-90" />
+                <!-- <figcaption
+                    class="absolute inset-x-0 bottom-1 z-20 w-96 mx-auto p-4 font-light text-sm text-center tracking-widest leading-snug bg-gray-500 bg-opacity-15">
+                    Any kind of content here!
+                    Primum in nostrane potestate est, quid meminerimus? Nulla erit controversia. Vestri haec
+                    verecundius, illi fortasse constantius.
+                </figcaption> -->
+            </figure>
+        </template>
+
+        <button @click="back()"
+            class="absolute left-14 top-1/2 -translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
+            <svg class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:-translate-x-0.5"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
+                </path>
+            </svg>
+        </button>
+
+        <button @click="next()"
+            class="absolute right-14 top-1/2 translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
+            <svg class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:translate-x-0.5"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+    </article>
+
+    <script>
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('slider', () => ({
+                currentIndex: 1,
+                images: [
+                    'https://c.wallhere.com/photos/15/24/robot_Mech_Animals_computer_parts_nft_CGI_technology_digital_art_computer-2241048.jpg!d',
+                    'https://c.wallhere.com/photos/47/6c/robot_Mech_Animals_computer_parts_nft_CGI_technology_digital_art_computer-2241046.jpg!d',
+                    'https://c.wallhere.com/photos/eb/9c/computer_PC_build_PC_cases_PC_gaming_glass_design_high_tech_nft_robot-2236072.jpg!d',
+                    'https://static1.squarespace.com/static/62c79daf8f086645bc448e69/t/62cb38d899c2d675ef55b2e0/1657485529064/3440x1440-Astronaut-GameStop-Dark.jpg',
+                    'https://www.teahub.io/photos/full/63-634419_hearthstone-game-wallpaper-4k.jpg',
+                    'https://wallpapercave.com/wp/wp12949456.png',
+                    'https://wallpapers.com/images/hd4/sci-fi-shining-astronaut-b56yh7cbhx2sua8a.jpg'
+
+                ],
+                back() {
+                    if (this.currentIndex > 1) {
+                        this.currentIndex = this.currentIndex - 1;
+                    }
+                },
+                next() {
+                    if (this.currentIndex < this.images.length) {
+                        this.currentIndex = this.currentIndex + 1;
+                    } else if (this.currentIndex <= this.images.length) {
+                        this.currentIndex = this.images.length - this.currentIndex + 1
+                    }
+                },
+            }))
+        })
+    </script>
+    <!-- có thể css thẳng vào class luôn, ví dụ text-[mã màu ở đây] -->
+    <!-- sm:text-2xl trên màn hình sm (640px) thì text là 2xl
+        md:text-3xl trên màn hình md (768px) thì text là 2xl
+        lg:text-4xl trên màn hình lg (1024px) thì text là 2xl-->
+    <div class="pt-12" id="author">
+        <h1 class="text-center text-white sm:text-2xl md:text-3xl lg:text-4xl text-5xl font-bold mb-7">Long the baddie
+        </h1>
+        <h2 class="text-center font-light text-gray-300 text-xl mb-35">Giàu có và quyến rũ</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-3 pl-5 pr-5  gap-y-7 lg:gap-y-0 gap-x-35 max-w-6xl mx-auto px-[15px]">
+            <div>
+                <div class="h-100 mb-5">
+                    <img class="w-full rounded-lg object-cover mb-5"
+                        src="https://w0.peakpx.com/wallpaper/648/222/HD-wallpaper-mars-o-naut-astronaut-cosmos-cryptoart-milkyway-neon-nft-nfts-space-universe.jpg"
+                        alt="">
+                </div>
+                <h3 class="text-center font-medium text-xl text-white">Very handsome and sexy</h3>
+                <span class="block text-center text-gray-400">7,102 peoples argee</span>
+            </div>
+            <div>
+                <div class="h-100 mb-5">
+                    <img class="w-full rounded-lg object-cover mb-5"
+                        src="https://wcozece75h5bploxxvz3mit2ihx22z4q2kxctuke5to5y452hy6a.arweave.net/sJ2SCJ_p-het171ztiJ6Qe-tZ5DSrinRROzd3HO6Pjw?ext=jpg"
+                        alt="">
+                </div>
+                <h3 class="text-center font-medium text-xl text-white">Very handsome and sexy</h3>
+                <span class="block text-center text-gray-400">7,102 peoples argee</span>
+            </div>
+            <div>
+                <div class="h-100 mb-5">
+                    <img class="w-full rounded-lg object-cover mb-5"
+                        src="https://d2ybmb80bbm9ts.cloudfront.net/xD/GF/QmR2CAkuSYiJYfL2tS4fRBiitGhCPDVp46QVsjDeK3xDGF/nft.jpg"
+                        alt="">
+                </div>
+                <h3 class="text-center font-medium text-xl text-white">Very handsome and sexy</h3>
+                <span class="block text-center text-gray-400">7,102 peoples argee</span>
+            </div>
+        </div>
+<!-- //form -->
+        <div class="bg-transparent relative lg:py-20" id="form">
+            <div class="flex flex-col items-center justify-between pt-0 pr-10 pb-0 pl-10 mt-0 mr-auto mb-0 ml-auto max-w-7xl
+                xl:px-5 lg:flex-row">
+                <div class="flex flex-col items-center w-full pt-5 pr-10 pb-20 pl-10 lg:pt-20 lg:flex-row">
+                    <div class="w-full bg-cover relative max-w-md lg:max-w-2xl lg:w-7/12">
+                        <div class="flex flex-col items-center justify-center w-full h-full relative lg:pr-10">
+                            <img src="https://nftcalendar.io/storage/uploads/events/2022/12/giC8Wc3JKeewOAIMcYCpVSay6I28jI19Y92pojc7.jpg"
+                                class="btn-" />
+                        </div>
+                    </div>
+                    <div class="w-full mt-20 mr-0 mb-0 ml-0 relative z-10 max-w-2xl lg:mt-0 lg:w-5/12">
+                        <div class="flex flex-col items-start justify-start pt-10 pr-10 pb-10 pl-10 bg-white shadow-2xl rounded-xl
+                      relative z-10">
+                            <p class="w-full text-4xl font-medium text-center leading-snug font-serif">Sign up for an
+                                account</p>
+                            <div class="w-full mt-6 mr-0 mb-0 ml-0 relative space-y-8">
+                                <div class="relative">
+                                    <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
+                            absolute">Username</p>
+                                    <input placeholder="Viet Long" type="text" class="border placeholder-gray-400 focus:outline-none
+                            focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                            border-gray-300 rounded-md" />
+                                </div>
+                                <div class="relative">
+                                    <p
+                                        class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600 absolute">
+                                        Email</p>
+                                    <input placeholder="123@ex.com" type="text" class="border placeholder-gray-400 focus:outline-none
+                            focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                            border-gray-300 rounded-md" />
+                                </div>
+                                <div class="relative">
+                                    <p class="bg-white pt-0 pr-2 pb-0 pl-2 -mt-3 mr-0 mb-0 ml-2 font-medium text-gray-600
+                            absolute">Password</p>
+                                    <input placeholder="Password" type="password" class="border placeholder-gray-400 focus:outline-none
+                            focus:border-black w-full pt-4 pr-4 pb-4 pl-4 mt-2 mr-0 mb-0 ml-0 text-base block bg-white
+                            border-gray-300 rounded-md" />
+                                </div>
+                                <div class="relative">
+                                    <a class="w-full inline-block pt-4 pr-5 pb-4 pl-5 text-xl font-medium text-center text-white bg-indigo-500
+                            rounded-lg transition duration-200 hover:bg-indigo-600 ease">Submit</a>
+                                </div>
+                            </div>
+                        </div>
+                        <svg viewbox="0 0 91 91" class="absolute top-0 left-0 z-0 w-32 h-32 -mt-12 -ml-12 text-yellow-300
+                      fill-current">
+                            <g stroke="none" strokewidth="1" fillrule="evenodd">
+                                <g fillrule="nonzero">
+                                    <g>
+                                        <g>
+                                            <circle cx="3.261" cy="3.445" r="2.72" />
+                                            <circle cx="15.296" cy="3.445" r="2.719" />
+                                            <circle cx="27.333" cy="3.445" r="2.72" />
+                                            <circle cx="39.369" cy="3.445" r="2.72" />
+                                            <circle cx="51.405" cy="3.445" r="2.72" />
+                                            <circle cx="63.441" cy="3.445" r="2.72" />
+                                            <circle cx="75.479" cy="3.445" r="2.72" />
+                                            <circle cx="87.514" cy="3.445" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 12)">
+                                            <circle cx="3.261" cy="3.525" r="2.72" />
+                                            <circle cx="15.296" cy="3.525" r="2.719" />
+                                            <circle cx="27.333" cy="3.525" r="2.72" />
+                                            <circle cx="39.369" cy="3.525" r="2.72" />
+                                            <circle cx="51.405" cy="3.525" r="2.72" />
+                                            <circle cx="63.441" cy="3.525" r="2.72" />
+                                            <circle cx="75.479" cy="3.525" r="2.72" />
+                                            <circle cx="87.514" cy="3.525" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 24)">
+                                            <circle cx="3.261" cy="3.605" r="2.72" />
+                                            <circle cx="15.296" cy="3.605" r="2.719" />
+                                            <circle cx="27.333" cy="3.605" r="2.72" />
+                                            <circle cx="39.369" cy="3.605" r="2.72" />
+                                            <circle cx="51.405" cy="3.605" r="2.72" />
+                                            <circle cx="63.441" cy="3.605" r="2.72" />
+                                            <circle cx="75.479" cy="3.605" r="2.72" />
+                                            <circle cx="87.514" cy="3.605" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 36)">
+                                            <circle cx="3.261" cy="3.686" r="2.72" />
+                                            <circle cx="15.296" cy="3.686" r="2.719" />
+                                            <circle cx="27.333" cy="3.686" r="2.72" />
+                                            <circle cx="39.369" cy="3.686" r="2.72" />
+                                            <circle cx="51.405" cy="3.686" r="2.72" />
+                                            <circle cx="63.441" cy="3.686" r="2.72" />
+                                            <circle cx="75.479" cy="3.686" r="2.72" />
+                                            <circle cx="87.514" cy="3.686" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 49)">
+                                            <circle cx="3.261" cy="2.767" r="2.72" />
+                                            <circle cx="15.296" cy="2.767" r="2.719" />
+                                            <circle cx="27.333" cy="2.767" r="2.72" />
+                                            <circle cx="39.369" cy="2.767" r="2.72" />
+                                            <circle cx="51.405" cy="2.767" r="2.72" />
+                                            <circle cx="63.441" cy="2.767" r="2.72" />
+                                            <circle cx="75.479" cy="2.767" r="2.72" />
+                                            <circle cx="87.514" cy="2.767" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 61)">
+                                            <circle cx="3.261" cy="2.846" r="2.72" />
+                                            <circle cx="15.296" cy="2.846" r="2.719" />
+                                            <circle cx="27.333" cy="2.846" r="2.72" />
+                                            <circle cx="39.369" cy="2.846" r="2.72" />
+                                            <circle cx="51.405" cy="2.846" r="2.72" />
+                                            <circle cx="63.441" cy="2.846" r="2.72" />
+                                            <circle cx="75.479" cy="2.846" r="2.72" />
+                                            <circle cx="87.514" cy="2.846" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 73)">
+                                            <circle cx="3.261" cy="2.926" r="2.72" />
+                                            <circle cx="15.296" cy="2.926" r="2.719" />
+                                            <circle cx="27.333" cy="2.926" r="2.72" />
+                                            <circle cx="39.369" cy="2.926" r="2.72" />
+                                            <circle cx="51.405" cy="2.926" r="2.72" />
+                                            <circle cx="63.441" cy="2.926" r="2.72" />
+                                            <circle cx="75.479" cy="2.926" r="2.72" />
+                                            <circle cx="87.514" cy="2.926" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 85)">
+                                            <circle cx="3.261" cy="3.006" r="2.72" />
+                                            <circle cx="15.296" cy="3.006" r="2.719" />
+                                            <circle cx="27.333" cy="3.006" r="2.72" />
+                                            <circle cx="39.369" cy="3.006" r="2.72" />
+                                            <circle cx="51.405" cy="3.006" r="2.72" />
+                                            <circle cx="63.441" cy="3.006" r="2.72" />
+                                            <circle cx="75.479" cy="3.006" r="2.72" />
+                                            <circle cx="87.514" cy="3.006" r="2.719" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                        <svg viewbox="0 0 91 91" class="absolute bottom-0 right-0 z-0 w-32 h-32 -mb-12 -mr-12 text-indigo-500
+                      fill-current">
+                            <g stroke="none" strokewidth="1" fillrule="evenodd">
+                                <g fillrule="nonzero">
+                                    <g>
+                                        <g>
+                                            <circle cx="3.261" cy="3.445" r="2.72" />
+                                            <circle cx="15.296" cy="3.445" r="2.719" />
+                                            <circle cx="27.333" cy="3.445" r="2.72" />
+                                            <circle cx="39.369" cy="3.445" r="2.72" />
+                                            <circle cx="51.405" cy="3.445" r="2.72" />
+                                            <circle cx="63.441" cy="3.445" r="2.72" />
+                                            <circle cx="75.479" cy="3.445" r="2.72" />
+                                            <circle cx="87.514" cy="3.445" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 12)">
+                                            <circle cx="3.261" cy="3.525" r="2.72" />
+                                            <circle cx="15.296" cy="3.525" r="2.719" />
+                                            <circle cx="27.333" cy="3.525" r="2.72" />
+                                            <circle cx="39.369" cy="3.525" r="2.72" />
+                                            <circle cx="51.405" cy="3.525" r="2.72" />
+                                            <circle cx="63.441" cy="3.525" r="2.72" />
+                                            <circle cx="75.479" cy="3.525" r="2.72" />
+                                            <circle cx="87.514" cy="3.525" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 24)">
+                                            <circle cx="3.261" cy="3.605" r="2.72" />
+                                            <circle cx="15.296" cy="3.605" r="2.719" />
+                                            <circle cx="27.333" cy="3.605" r="2.72" />
+                                            <circle cx="39.369" cy="3.605" r="2.72" />
+                                            <circle cx="51.405" cy="3.605" r="2.72" />
+                                            <circle cx="63.441" cy="3.605" r="2.72" />
+                                            <circle cx="75.479" cy="3.605" r="2.72" />
+                                            <circle cx="87.514" cy="3.605" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 36)">
+                                            <circle cx="3.261" cy="3.686" r="2.72" />
+                                            <circle cx="15.296" cy="3.686" r="2.719" />
+                                            <circle cx="27.333" cy="3.686" r="2.72" />
+                                            <circle cx="39.369" cy="3.686" r="2.72" />
+                                            <circle cx="51.405" cy="3.686" r="2.72" />
+                                            <circle cx="63.441" cy="3.686" r="2.72" />
+                                            <circle cx="75.479" cy="3.686" r="2.72" />
+                                            <circle cx="87.514" cy="3.686" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 49)">
+                                            <circle cx="3.261" cy="2.767" r="2.72" />
+                                            <circle cx="15.296" cy="2.767" r="2.719" />
+                                            <circle cx="27.333" cy="2.767" r="2.72" />
+                                            <circle cx="39.369" cy="2.767" r="2.72" />
+                                            <circle cx="51.405" cy="2.767" r="2.72" />
+                                            <circle cx="63.441" cy="2.767" r="2.72" />
+                                            <circle cx="75.479" cy="2.767" r="2.72" />
+                                            <circle cx="87.514" cy="2.767" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 61)">
+                                            <circle cx="3.261" cy="2.846" r="2.72" />
+                                            <circle cx="15.296" cy="2.846" r="2.719" />
+                                            <circle cx="27.333" cy="2.846" r="2.72" />
+                                            <circle cx="39.369" cy="2.846" r="2.72" />
+                                            <circle cx="51.405" cy="2.846" r="2.72" />
+                                            <circle cx="63.441" cy="2.846" r="2.72" />
+                                            <circle cx="75.479" cy="2.846" r="2.72" />
+                                            <circle cx="87.514" cy="2.846" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 73)">
+                                            <circle cx="3.261" cy="2.926" r="2.72" />
+                                            <circle cx="15.296" cy="2.926" r="2.719" />
+                                            <circle cx="27.333" cy="2.926" r="2.72" />
+                                            <circle cx="39.369" cy="2.926" r="2.72" />
+                                            <circle cx="51.405" cy="2.926" r="2.72" />
+                                            <circle cx="63.441" cy="2.926" r="2.72" />
+                                            <circle cx="75.479" cy="2.926" r="2.72" />
+                                            <circle cx="87.514" cy="2.926" r="2.719" />
+                                        </g>
+                                        <g transform="translate(0 85)">
+                                            <circle cx="3.261" cy="3.006" r="2.72" />
+                                            <circle cx="15.296" cy="3.006" r="2.719" />
+                                            <circle cx="27.333" cy="3.006" r="2.72" />
+                                            <circle cx="39.369" cy="3.006" r="2.72" />
+                                            <circle cx="51.405" cy="3.006" r="2.72" />
+                                            <circle cx="63.441" cy="3.006" r="2.72" />
+                                            <circle cx="75.479" cy="3.006" r="2.72" />
+                                            <circle cx="87.514" cy="3.006" r="2.719" />
+                                        </g>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mx-auto grid xl:grid-cols-4 sm:grid-cols-2 ld:grid-cols-2 gap-x-5 p-5 " style="max-width: 1200px;">
+            <div class="px-5 py-8 rounded-lg border-white shadow-lg text-center dark:bg-red-300 bg-white">
+                <img class="mb-5 mx-auto" style="max-width: 300px; max-height: 300px;"
+                    src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/premium/flag-dynamic-premium.png"
+                    alt="">
+                <h3 class="text-lg font-semibold dark:text-white">Assets 1</h3>
+                <div class="text-sm text-gray leading-normal text-justify dark:text-white">Lorem ipsum dolor sit amet
+                    consectetur
+                    adipisicing elit.
+                    Non atque doloribus rerum deleniti aut aliquid eius maxime exercitationem, in delectus commodi illo
+                    saepe totam quia optio eligendi sapiente, aperiam officia.</div>
+            </div>
+            <div class="px-5 py-8 rounded-lg border-white shadow-lg text-center bg-white">
+                <img class="mb-5 mx-auto" style="max-width: 300px; max-height: 300px;"
+                    src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/premium/flash-dynamic-premium.png"
+                    alt="">
+                <h3 class="text-lg font-semibold dark:text-white">Assets 1</h3>
+                <div class="text-sm text-gray leading-normal text-justify dark:text-white">Lorem ipsum dolor sit amet
+                    consectetur
+                    adipisicing elit.
+                    Non atque doloribus rerum deleniti aut aliquid eius maxime exercitationem, in delectus commodi illo
+                    saepe totam quia optio eligendi sapiente, aperiam officia.</div>
+            </div>
+            <div class="px-5 py-8 rounded-lg border-white shadow-lg text-center bg-white">
+                <img class="mb-5 mx-auto" style="max-width: 300px; max-height: 300px;"
+                    src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/premium/gym-dynamic-premium.png"
+                    alt="">
+                <h3 class="text-lg font-semibold dark:text-white">Assets 1</h3>
+                <div class="text-sm text-gray leading-normal text-justify dark:text-white">Lorem ipsum dolor sit amet
+                    consectetur
+                    adipisicing elit.
+                    Non atque doloribus rerum deleniti aut aliquid eius maxime exercitationem, in delectus commodi illo
+                    saepe totam quia optio eligendi sapiente, aperiam officia.</div>
+            </div>
+            <div class="px-5 py-8 rounded-lg border-white shadow-lg text-center bg-white">
+                <img class="mb-5 mx-auto" style="max-width: 300px; max-height: 300px;"
+                    src="https://3dicons.sgp1.cdn.digitaloceanspaces.com/v1/dynamic/premium/dollar-dynamic-premium.png"
+                    alt="">
+                <h3 class="text-lg font-semibold dark:text-white">Assets 1</h3>
+                <div class="text-sm text-gray leading-normal text-justify dark:text-white">Lorem ipsum dolor sit amet
+                    consectetur
+                    adipisicing elit.
+                    Non atque doloribus rerum deleniti aut aliquid eius maxime exercitationem, in delectus commodi illo
+                    saepe totam quia optio eligendi sapiente, aperiam officia.</div>
+            </div>
+
+        </div>
+        <div class="xl:grid-cols-2 sm:grid-cols-1 px-10 mt-9 mx-12 grid text-white">
+            <div>
+                <img class="rounded-xl" style="width: 500px; height: 500px;"
+                    src="https://airnfts.s3.amazonaws.com/nft-images/20210512/Gooey_Astronaut_1620771309600.jpg" alt="">
+            </div>
+
+            <div>
+                <h1 style="color: rgb(54 221 185)" class="mb-5 text-3xl text-center font-bold">NFT DESCRIPTION
+                </h1>
+                <h2 class="mb-5 text-xl text-center">Earthshine - Edition of 50</h2>
+                <h3 class="mb-5">This NFT is based on an oil on canvas work Astronaut Ron Garan painted in 2015. The
+                    painting is
+                    based on a photo he took (<strike>titled “Earthshine”</strike>) while Ron lived and worked onboard
+                    the International
+                    Space Station in 2011.</h3>
+                <p class="text-justify italicmb-5">Ron’s description, <i>“Spending months in space I can pinpoint
+                        specific moments when I wasn't just
+                        looking down at the Earth, I was looking at a planet hanging in the blackness of space.
+                        "Earthshine"
+                        depicts one of those moments. From the vantage point of the windowed observatory known as "The
+                        Cupola", <strike>installed on the Earth facing side of the International Space Station</strike>,
+                        I witnessed one
+                        of
+                        our 16 daily sunsets. On one of those sunsets, I also observed the simultaneous setting of a
+                        crescent moon that was also being illuminated by reflected twilight from the Earth. The scene
+                        impressed upon me the cosmic dance of the Earth and its Moon that has continued since the dawn
+                        of
+                        time. <strike>The silhouettes of towering thunderstorms on the horizon juxtapose our
+                            terrestrial</strike>
+                        existence
+                        with the cosmic backdrop. I remember the awe I felt when I immersed myself with the colors and
+                        beauty of this moment in time.” </i></p>
+            </div>
+        </div>
+        <div class="text-center text-white font-sans text-base p-14" id="nft-buy">
+            <div class="w-full px-5 py-5">
+                <div class="grid xl:grid-cols-3 gap-20 sm:grid-cols-1">
+                    <div class="p-5 rounded-2xl" style="background-color: #4a4f84;">
+                        <div class="w-full mb-5" style="height: 350px;">
+                            <img srcset="https://airnfts.s3.amazonaws.com/nft-images/20210606/Astronaut_in_nebula_1623031896990.jpg"
+                                class="h-full w-full object-cover rounded-xl" alt="">
+                        </div>
+                        <h3 class="text-white font-bold">Astrounaut in the ocean</h3>
+                        <div class="text-gray-300 mb-4">Created by <a href="#" class="">Viet Long</a></div>
+                        <div class="flex items-start justify-between mb-10">
+                            <div class="flex flex-col items-start">
+                                <span class="text-sm text-grayb1">Current Bid</span>
+                                <span class="text-lg font-semibold text-white">7102 bitcoins</span>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <span class="text-sm text-grayb1">Remaining time</span>
+                                <span class="text-lg font-semibold text-white">7102 bitcoins</span>
+                            </div>
+                        </div>
+                        <button class="text-white font-semibold text-lg w-full p-4 rounded-xl hover:opacity-70"
+                            style="background-color: #a49fc9;">COLLECT NOW</button>
+                    </div>
+                    <div class="p-5 rounded-2xl" style="background-color: #4a4f84;">
+                        <div class="w-full mb-5" style="height: 350px;">
+                            <img srcset="https://cdn3.f-cdn.com/contestentries/2014042/18524474/61802aeecf88c_thumb900.jpg"
+                                class="h-full w-full object-cover rounded-xl" alt="">
+                        </div>
+                        <h3 class="text-white font-bold">Astrounaut in the ocean</h3>
+                        <div class="text-gray-300 mb-4">Created by <a href="#" class="">Viet Long</a></div>
+                        <div class="flex items-start justify-between mb-10">
+                            <div class="flex flex-col items-start">
+                                <span class="text-sm text-grayb1">Current Bid</span>
+                                <span class="text-lg font-semibold text-white">7102 bitcoins</span>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <span class="text-sm text-grayb1">Remaining time</span>
+                                <span class="text-lg font-semibold text-white">7102 bitcoins</span>
+                            </div>
+                        </div>
+                        <button class="text-white font-semibold text-lg w-full p-4 rounded-xl hover:opacity-70"
+                            style="background-color: #a49fc9;">COLLECT NOW</button>
+                    </div>
+                    <div class="p-5 rounded-2xl" style="background-color: #4a4f84;">
+                        <div class="w-full mb-5" style="height: 350px;">
+                            <img srcset="https://www.pickacrypto.com/wp-content/uploads/2023/01/Fk1qCbIX0AI-HAR.jpeg"
+                                class="h-full w-full object-cover rounded-xl" alt="">
+                        </div>
+                        <h3 class="text-white font-bold">Astrounaut in the ocean</h3>
+                        <div class="text-gray-300 mb-4">Created by <a href="#" class="">Viet Long</a></div>
+                        <div class="flex items-start justify-between mb-10">
+                            <div class="flex flex-col items-start">
+                                <span class="text-sm text-grayb1">Current Bid</span>
+                                <span class="text-lg font-semibold text-white">7102 bitcoins</span>
+                            </div>
+                            <div class="flex flex-col items-end">
+                                <span class="text-sm text-grayb1">Remaining time</span>
+                                <span class="text-lg font-semibold text-white">7102 bitcoins</span>
+                            </div>
+                        </div>
+                        <button class="text-white font-semibold text-lg w-full p-4 rounded-xl hover:opacity-70"
+                            style="background-color: #a49fc9;">COLLECT NOW</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="mt-20 xl:mt-32 mx-auto w-full relative text-center bg-blue-600 text-white">
+        <div class="px-6 py-8 md:py-14 xl:pt-20 xl:pb-12"
+            style="background-image: url(https://wallpapers.com/images/hd/futuristic-city-of-cyberpunk-artwork-hd-w3f6sbb8i3y4jbie.jpg); background-size: cover; background-repeat: no-repeat;">
+            <h2 class="font-bold text-3xl xl:text-4xl leading-snug">
+                Ready to get your NFT back?<br>Start your free trial today.
+            </h2>
+            <a class="mt-8 xl:mt-12 px-12 py-5 text-lg font-medium leading-tight inline-block bg-blue-800 rounded-full shadow-xl border border-transparent hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-sky-999 focus:ring-sky-500"
+                href="#">Get
+                started</a>
+            <div class="mt-14 xl:mt-20">
+                <nav class="flex flex-wrap justify-center text-lg font-medium">
+                    <div class="px-5 py-2"><a href="#">Contact</a></div>
+                    <div class="px-5 py-2"><a href="#">Pricing</a></div>
+                    <div class="px-5 py-2"><a href="#">Privacy</a></div>
+                    <div class="px-5 py-2"><a href="#">Terms</a></div>
+                </nav>
+                <p class="mt-7 text-base">© 2024 7102, NVL</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const toggleSwitch = document.querySelector(
+            '.toogle-switch input[type="checkbox"]'
+        );
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme) {
+            document.documentElement.setAttribute("class", currentTheme);
+            if (currentTheme === "dark") {
+                toggleSwitch.checked = true;
+            }
+        }
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute("class", "dark");
+                localStorage.setItem("theme", "dark");
+            } else {
+                document.documentElement.setAttribute("class", "light");
+                localStorage.setItem("theme", "light");
+            }
+        }
+        toggleSwitch.addEventListener("change", switchTheme);
+    </script>
+</body>
+
+
+</html>
